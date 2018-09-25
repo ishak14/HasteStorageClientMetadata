@@ -1,0 +1,13 @@
+{
+  "haste_metadata_server": {
+    "connection_string": "mongodb://130.xxx.yy.zz:27017"
+  },
+  "os_swift": {
+    "username": "xxxxx",
+    "password": "xxxx",
+    "project_name": "xxxxx",
+    "user_domain_name": "xxxx",
+    "auth_url": "xxxxx",
+    "project_domain_name": "xxxx"
+  }
+}
