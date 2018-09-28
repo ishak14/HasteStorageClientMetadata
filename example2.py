@@ -1,7 +1,7 @@
 import time
 import datetime
-from haste_storage_client.core_meta import HasteStorageClient, OS_SWIFT_STORAGE, TRASH, HasteStorageAbstract
-
+from haste_storage_client.core import HasteStorageClient, OS_SWIFT_STORAGE, TRASH
+from haste_storage_client.core2 import HasteStorageClientMeta
 
 
 haste_storage_client_config = {
@@ -24,7 +24,7 @@ haste_storage_client_config = {
 
 # Identifies both the experiment, and the session (ie. unique each time the stream starts),
 # for example, this would be a good format - this needs to be generated at the stream edge.
-initials = 'anna_example'
+initials = 'Tony_Wang'
 stream_id = datetime.datetime.today().strftime('%Y_%m_%d__%H_%M_%S') + '_exp1_' + initials
 
 print('stream ID is: %s' % stream_id)
@@ -33,9 +33,9 @@ print('stream ID is: %s' % stream_id)
 
 
 # Project ID
-project_id = 1
+project_id = "1"
 
-client = HasteStorageClientMeta(stream_id,
+client = HasteStorageClientMeta(
                             project_id=project_id,
                             config=haste_storage_client_config,
                             description="this test was made in ...",
@@ -47,21 +47,24 @@ client = HasteStorageClientMeta(stream_id,
 blob_bytes = b'this is a binary blob eg. image data.'
 timestamp_cloud_edge = time.time()
 substream_id = 'B14'  # Group by microscopy well ID.
-description=""
-
+description = "description test!"
+machineNumber = "PT29992"
+institute = "Uppsala University"
 """
-    def save(self,
-             timestamp,
-             location,
+    def save(timestamp_cloud_edge,
              substream_id,
              description,
              machineNumber,
              institute,
-             blob_id
+             blob_id,
              ):
              """
 client.save(timestamp_cloud_edge,
-            (19.34, 5.78),
-            substream_id)    
+		substream_id,
+		description,
+		machineNumber,
+		institute,
+		blob_bytes
+		)    
 
 client.close()
