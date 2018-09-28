@@ -33,10 +33,10 @@ print('stream ID is: %s' % stream_id)
 
 
 # Project ID
-project_id = "1"
+#project_id = "1"
 
 client = HasteStorageClientMeta(
-                            project_id=project_id,
+                            project_id=stream_id,
                             config=haste_storage_client_config,
                             description="this test was made in ...",
                             machineNumber="S4240 Panasonic",
@@ -44,27 +44,25 @@ client = HasteStorageClientMeta(
                             storage_policy=[(0.5, 1.0, OS_SWIFT_STORAGE)],  # map 0.5<=interestingness<=1.0 to OS swift.
                             default_storage=TRASH)  # discard blobs which don't match the policy above.
 
-blob_bytes = b'this is a binary blob eg. image data.'
+#blob_bytes = b'this is a binary blob eg. image data.'
 timestamp_cloud_edge = time.time()
-substream_id = 'B14'  # Group by microscopy well ID.
+substream_id = 'B22'  # Group by microscopy well ID.
 description = "description test!"
-machineNumber = "PT29992"
-institute = "Uppsala University"
+machineNumber = "SQ7333"
+institute = "Gothenburg University"
 """
     def save(timestamp_cloud_edge,
              substream_id,
              description,
              machineNumber,
-             institute,
-             blob_id,
+             institute
              ):
              """
 client.save(timestamp_cloud_edge,
 		substream_id,
 		description,
 		machineNumber,
-		institute,
-		blob_bytes
+		institute
 		)    
 
 client.close()

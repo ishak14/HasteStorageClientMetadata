@@ -55,14 +55,12 @@ class HasteStorageClientMeta:
              substream_id,
              description,
              machineNumber,
-             institute,
-             blob_id
+             institute
              ):
 
       
 		blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 		document = {'timestamp': timestamp,
-                        'blob_id': blob_id,
                         'substream_id': substream_id,
                         'description': description,
                         'machineNumber': machineNumber,
