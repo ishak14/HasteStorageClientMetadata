@@ -11,16 +11,17 @@ class Author():
 		self.institute = institute
 
 class Metadata():
-	self.ingredient = None
-	self.description = None
-	self.authors = [Author() for _ in range(100)]
+	ingredients = []
+	description = None
+	authors = []
 
 	def __init__(self,
-			ingredient.name
-			ingredient.amount,
+			Ingredient,,
 			description,
 			authors)
-		self.ingredient.name = ingredient.name
+		self.ingredient.in
 		self.ingredient.amount = ingredient.amount
 		self.description = description
 		self.authors = [Author() for _ in range(100)]
+	def add_ingredient(self,Ingredient()):
+		self.ingredients.append(Ingredient())
