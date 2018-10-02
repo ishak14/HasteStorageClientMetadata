@@ -7,17 +7,17 @@ from haste_storage_client.interestingness_model import RestInterestingnessModel
 haste_storage_client_config = {
     'haste_metadata_server': {
         # See: https://docs.mongodb.com/manual/reference/connection-string/
-        'connection_string': 'mongodb://130.xxx.yy.zz:27017'
+        'connection_string': 'mongodb://130.239.81.77:27017'
     },
-    'os_swift': {
-        # See: https://docs.openstack.org/keystoneauth/latest/
-        #   api/keystoneauth1.identity.v3.html#module-keystoneauth1.identity.v3.password
-        'username': 'xxxxx',
-        'password': 'xxxx',
-        'project_name': 'xxxxx',
-        'user_domain_name': 'xxxx',
-        'auth_url': 'xxxxx',
-        'project_domain_name': 'xxxx'
+        'os_swift': {                                                                                                                       strm_2018_10_02__12_31_53_exp1_Tony_Wang
+        # See: https://docs.openstack.org/keystoneauth/latest/                                                                          strm_2018_10_02__12_32_12_exp1_Tony_Wang
+        #   api/keystoneauth1.identity.v3.html#module-keystoneauth1.identity.v3.password                                                replicaset:PRIMARY> upsert(self, doc, namespace, timestamp):
+        'username': 's9298',                                                                                                            ...
+        'password': '***',                                                                                                       ... '
+        'project_name': 'SNIC 2018/',                                                                                                   2018-10-02T12:33:35.117+0000 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:39
+        'user_domain_name': 'snic',                                                                                                     replicaset:PRIMARY>
+        'auth_url': 'xxxxx',                                                                                                            replicaset:PRIMARY> upsert(self, doc, namespace, timestamp):  '
+        'project_domain_name': 'xxxx'                                                                                                   2018-10-02T12:33:38.944+0000 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:39
     }
 }
 

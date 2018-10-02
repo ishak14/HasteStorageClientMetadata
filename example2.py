@@ -7,13 +7,13 @@ from haste_storage_client.core2 import HasteStorageClientMeta
 haste_storage_client_config = {
     'haste_metadata_server': {
         # See: https://docs.mongodb.com/manual/reference/connection-string/
-        'connection_string': 'mongodb://192.168.1.14:27017'
+        'connection_string': 'mongodb://130.239.81.77:27017'
     },
     'os_swift': {
         # See: https://docs.openstack.org/keystoneauth/latest/
         #   api/keystoneauth1.identity.v3.html#module-keystoneauth1.identity.v3.password
         'username': 's9498',
-        'password': 'Fikt6UppbD',
+        'password': '***',
         'project_name': 'SNIC 2018/10-31',
         'user_domain_name': 'snic',
         'auth_url': 'https://hpc2n.cloud.snic.se:5000/v3',
