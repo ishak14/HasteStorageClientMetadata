@@ -66,7 +66,7 @@ class HasteStorageClientMeta:
 			#	document.pop('_id', None)
 
 			result = self.mongo_collection.insert(document)
-			result = self.mongo_collection.insert_many(project.metadata.authors)
+			result = self.mongo_collection.insert_many({project.metadata.authors})
 			return result    
 
 	def __read_config_file():
