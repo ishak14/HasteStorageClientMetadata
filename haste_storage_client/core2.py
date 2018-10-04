@@ -49,16 +49,14 @@ class HasteStorageClientMeta:
 	def save(self,
              timestamp,
              substream_id,
-			 proejct
+			 project
              ):
 
       
 		blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 		document = {'timestamp': timestamp,
                         'substream_id': substream_id,
-                        'description': description,
-                        'machineNumber': machineNumber,
-                        'institute': institute}
+                        'project': project }
         
 		result = self.mongo_collection.insert(document)
 		return document    
