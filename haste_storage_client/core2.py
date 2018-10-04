@@ -63,7 +63,7 @@ class HasteStorageClientMeta:
 			
 			for author in project.metadata.authors:
 				print (author)
-				document['authors'].append({'type':'author',name':author.name,"institue": author.institute})
+				document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				print (document)
 
 
