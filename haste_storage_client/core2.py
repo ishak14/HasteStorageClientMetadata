@@ -13,9 +13,7 @@ class HasteStorageClientMeta:
 	def __init__(self,
                 project_id,
                 config=None,
-                description=None,
-                machineNumber=None,
-                institute=None,
+				project=None,
                 storage_policy=None,
                 default_storage=OS_SWIFT_STORAGE):
         
@@ -29,10 +27,7 @@ class HasteStorageClientMeta:
             		raise ValueError("default_storage_location cannot be None - did you mean 'trash'?")
 
         	self.project_id = project_id
-        	self.description = description
-        	self.machineNumber = machineNumber
-        	self.institute = institute
-
+			self.project = project
         	self.default_storage = default_storage
 
         	self.os_swift_storage = OsSwiftStorage(config[OS_SWIFT_STORAGE])
@@ -53,9 +48,7 @@ class HasteStorageClientMeta:
 	def save(self,
              timestamp,
              substream_id,
-             description,
-             machineNumber,
-             institute
+			 proejct
              ):
 
       

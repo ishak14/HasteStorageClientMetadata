@@ -2,7 +2,7 @@ import time
 import datetime
 from haste_storage_client.core import HasteStorageClient, OS_SWIFT_STORAGE, TRASH
 from haste_storage_client.core2 import HasteStorageClientMeta
-
+from classes.metadata_class import Ingredient, Author, Project, Metadata, Description
 
 haste_storage_client_config = {
     'haste_metadata_server': {
@@ -35,12 +35,32 @@ print('stream ID is: %s' % stream_id)
 # Project ID
 #project_id = "1"
 
+
+#CREATE METADATA
+#Initilize 	def __init__(self,name,amount,amountType):
+author_list = {["Tony Wang","Uppsala University"],["Andy Ishak", "Uppsala University"]}
+ingredient_list = {["magnesium",2,"ml"],["carbon",5,"cl"]}
+authors =[]
+ingredients = []
+
+for ingredient in ingredient_list:
+    ingredient = Ingredient(ingredient[0],ingredient[1],ingredient[2])
+    ingredients.append(ingredient)
+description = Description("testing out how a cell x reacts to 2ml mercury over y time")		
+
+for author in author_list:
+	author = Author(author[0],author[1])
+	authors.append(author)
+		
+		
+		
+metadata = Metadata(ingredients,description,authors)
+project = Project("Cell Mercury Testing","testing what mercury in the cell x will do over time of y month", metadata)
+
 client = HasteStorageClientMeta(
                             project_id=stream_id,
                             config=haste_storage_client_config,
-                            description="this test was made in ...",
-                            machineNumber="S4240 Panasonic",
-                            institute="Uppsala University",
+                            project = project,
                             storage_policy=[(0.5, 1.0, OS_SWIFT_STORAGE)],  # map 0.5<=interestingness<=1.0 to OS swift.
                             default_storage=TRASH)  # discard blobs which don't match the policy above.
 
@@ -60,9 +80,6 @@ institute = "Gothenburg University"
              """
 client.save(timestamp_cloud_edge,
 		substream_id,
-		description,
-		machineNumber,
-		institute
-		)    
+        project)    
 
 client.close()
