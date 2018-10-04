@@ -57,7 +57,6 @@ class HasteStorageClientMeta:
 				'substream_id': substream_id,
 				'project_name': project.name,
 				'project_description': project.description,
-				'authors': []
 				}
 			
 			author_list = []
@@ -67,7 +66,7 @@ class HasteStorageClientMeta:
 				#document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				
 
-			document.update('authors':author_list)
+			document.update({'authors':author_list})
 			result = self.mongo_collection.insert(document)
 
 			return document    
