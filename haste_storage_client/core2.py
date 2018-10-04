@@ -63,16 +63,16 @@ class HasteStorageClientMeta:
 			document = {'timestamp': timestamp,
 				'substream_id':{
 
-				'name': substream_id,
-				'info': {
-					'project_name': project.name,
-					'project_description': project.description,
-					'author': {
-						'name': project.metadata.authors[1].name,
-						'insitute': project.metadata.authors[1].institute
+					'name': substream_id,
+					'info': {
+								'project_name': project.name,
+								'project_description': project.description,
+								'author': {
+												'name': project.metadata.authors[1].name,
+												'insitute': project.metadata.authors[1].institute
+											}
+							}
 					}
-				}}
-	
 				}
 			
 
