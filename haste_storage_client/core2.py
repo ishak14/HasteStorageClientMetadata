@@ -47,22 +47,22 @@ class HasteStorageClientMeta:
 		return haste_storage_client_config
 
 	def save(self,
-             timestamp,
-             substream_id,
-			 project
-             ):
+            timestamp,
+            substream_id,
+			project
+            ):
+			 
+			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
+			document = {'timestamp': timestamp,
+				'substream_id': substream_id,
+				'project_name': project.name,
+				'project_description': project.description
+				}
+			for author in project.metadata.authors:
 
-      	
-		blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
-		document = {'timestamp': timestamp,
-                        'substream_id': substream_id,
-                        'project_name': project.name,
-						'project_description': project.description}
-
-		for author in project.metadata.authors:
-			document.update{ '$set' : { "authors":  {"name":author[0], "institue":author[1]}}}
-		result = self.mongo_collection.insert(document)
-		return document    
+				document.update({'$set' : { "authors":  {"name": author[0], "institue": author[1]}}})
+			result = self.mongo_collection.insert(document)
+			return document    
 
 	def __read_config_file():
 		with open(expanduser('~/.haste/haste_storage_client_config.json')) as fh:
