@@ -61,7 +61,9 @@ class HasteStorageClientMeta:
 			#	author_list.append(obj)
 			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 			document = {'timestamp': timestamp,
-				'substream_id': substream_id,
+				'substream_id':{
+
+				'name': substream_id,
 				'info': {
 					'project_name': project.name,
 					'project_description': project.description,
@@ -69,7 +71,7 @@ class HasteStorageClientMeta:
 						'name': project.metadata.authors[1].name,
 						'insitute': project.metadata.authors[1].institute
 					}
-				}
+				}}
 	
 				}
 			
@@ -77,7 +79,7 @@ class HasteStorageClientMeta:
 				#document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				
 
-			document.update({'authors':author_list})
+
 			result = self.mongo_collection.insert(document)
 
 			return document    
