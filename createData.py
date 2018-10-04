@@ -12,12 +12,13 @@ haste_storage_client_config = {
         'os_swift': {
         # See: https://docs.openstack.org/keystoneauth/latest/
         #   api/keystoneauth1.identity.v3.html#module-keystoneauth1.identity.v3.password
-        'username': 's9298',
+        'username': 's9498',
         'password': '***',
-        'project_name': 'SNIC 2018/',
+        'project_name': 'SNIC 2018/10-31',
         'user_domain_name': 'snic',
-        'auth_url': 'xxxxx',
-        'project_domain_name': 'xxxx'
+        'auth_url': 'https://hpc2n.cloud.snic.se:5000/v3',
+        'project_id': '18b42df05165487984448173891ceeee',
+        'project_domain_name':  'snic'
     }
 }
 
