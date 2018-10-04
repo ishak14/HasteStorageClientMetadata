@@ -51,7 +51,7 @@ description = Description("testing out how a cell x reacts to 2ml mercury over y
 for author in author_list:
 	author = Author(author[0],author[1])
 	authors.append(author)
-		
+print authors
 		
 		
 metadata = Metadata(ingredients,description,authors)
