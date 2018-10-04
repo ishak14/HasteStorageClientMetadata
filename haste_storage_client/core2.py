@@ -51,18 +51,29 @@ class HasteStorageClientMeta:
             substream_id,
 			project
             ):
-			 
+			author_list = []
+			#for author in project.metadata.authors:
+			#		'author': {
+			#			'name': "namn",
+			#			'insitute': "insitute"
+			#		}
+			#	obj = {'author'name': author.name, 'institute':author.institute}
+			#	author_list.append(obj)
 			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 			document = {'timestamp': timestamp,
 				'substream_id': substream_id,
-				'project_name': project.name,
-				'project_description': project.description,
+				'info': {
+					'project_name': project.name,
+					'project_description': project.description,
+					'author': {
+						'name': project.metadata.authors[1].name,
+						'insitute': project.metadata.authors[1].insitute
+					}
+				}
+	
 				}
 			
-			author_list = []
-			for author in project.metadata.authors:
-				obj = {'name': author.name, 'institute':author.institute}
-				author_list.append(obj)
+
 				#document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				
 
