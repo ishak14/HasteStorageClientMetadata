@@ -55,6 +55,7 @@ for author in author_list:
 		
 		
 metadata = Metadata(ingredients,description,authors)
+print (metadata)
 project = Project("Cell Mercury Testing","testing what mercury in the cell x will do over time of y month", metadata)
 
 client = HasteStorageClientMeta(
