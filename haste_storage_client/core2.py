@@ -67,7 +67,7 @@ class HasteStorageClientMeta:
 
 			result = self.mongo_collection.insert(document)
 			result = self.mongo_collection.insert_many(project.metadata.authors)
-			return document    
+			return result    
 
 	def __read_config_file():
 		with open(expanduser('~/.haste/haste_storage_client_config.json')) as fh:
