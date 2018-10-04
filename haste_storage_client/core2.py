@@ -57,7 +57,7 @@ class HasteStorageClientMeta:
 				'substream_id': substream_id,
 				'project_name': project.name,
 				'project_description': project.description,
-				'authors': []
+				'author': []
 				}
 			
 			
