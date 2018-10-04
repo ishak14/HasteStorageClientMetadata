@@ -60,8 +60,9 @@ class HasteStorageClientMeta:
 			#	obj = {'author'name': author.name, 'institute':author.institute}
 			#	author_list.append(obj)
 			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
-			document = {'timestamp': timestamp,
+			document = {
 				'substream':{
+					'timestamp': timestamp,
 					'id': substream_id,
 					'project': {
 							'name': project.name,
