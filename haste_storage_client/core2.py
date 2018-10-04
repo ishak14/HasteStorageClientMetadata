@@ -60,14 +60,13 @@ class HasteStorageClientMeta:
 				}
 			
 			
-			#for author in project.metadata.authors:
-			#	document.update({'author' : {'name':author.name,"institue": author.institute}})
-			#	print (document)
-			#	document.pop('_id', None)
+			for author in project.metadata.authors:
+				self.mongo_collection.insert({'author' : {'name':author.name,"institue": author.institute}})
+
 
 			result = self.mongo_collection.insert(document)
-			result = self.mongo_collection.insert_many({project.metadata.authors})
-			return result    
+
+			return document    
 
 	def __read_config_file():
 		with open(expanduser('~/.haste/haste_storage_client_config.json')) as fh:
