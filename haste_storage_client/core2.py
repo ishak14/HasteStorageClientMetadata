@@ -62,6 +62,7 @@ class HasteStorageClientMeta:
 			
 			for author in project.metadata.authors:
 				document.update({'author' : {'name':author.name,"institue": author.institute}})
+				print (document)
 				document.pop('_id', None)
 			result = self.mongo_collection.insert(document)
 			return document    
