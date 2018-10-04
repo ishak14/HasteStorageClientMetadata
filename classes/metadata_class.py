@@ -11,7 +11,7 @@ class Author():
 		self.name = name
 		self.institute = institute
 	def __getitem__(self,index):
-		return self.name.nameId[index]
+		return self.name[index]
 
 class Metadata():
 	def	__init__(self,ingredients,description,authors):
