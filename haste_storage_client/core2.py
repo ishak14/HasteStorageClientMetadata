@@ -59,12 +59,13 @@ class HasteStorageClientMeta:
 				'project_description': project.description
 				}
 			
-
+			authorlist = []
 			for author in project.metadata.authors:
 				print (author.name)
 
-				self.mongo_collection.insert_one({'authors' : {author.name:  {"institue": author.institute}}})
+				authorlist.append({'authors' : {author.name:  {"institue": author.institute}}})
 		
+			document.update(authorlist)
 			result = self.mongo_collection.insert(document)
 			return document    
 
