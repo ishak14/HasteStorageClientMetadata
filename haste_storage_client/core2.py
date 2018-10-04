@@ -57,13 +57,13 @@ class HasteStorageClientMeta:
 				'substream_id': substream_id,
 				'project_name': project.name,
 				'project_description': project.description,
-				'author': []
+				'authors': []
 				}
 			
 			
 			for author in project.metadata.authors:
 				print (author)
-				document['author'].append({'_id' : {'name':author.name,"institue": author.institute}})
+				document['authors'].append({'name':author.name,"institue": author.institute})
 				print (document)
 
 
