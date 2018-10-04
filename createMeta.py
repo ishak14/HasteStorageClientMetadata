@@ -38,8 +38,8 @@ print('stream ID is: %s' % stream_id)
 
 #CREATE METADATA
 #Initilize 	def __init__(self,name,amount,amountType):
-author_list = {["Tony Wang","Uppsala University"],["Andy Ishak", "Uppsala University"]}
-ingredient_list = {["magnesium",2,"ml"],["carbon",5,"cl"]}
+author_list = [["Tony Wang","Uppsala University"],["Andy Ishak", "Uppsala University"]]
+ingredient_list = [["magnesium",2,"ml"],["carbon",5,"cl"]]
 authors =[]
 ingredients = []
 
