@@ -61,8 +61,7 @@ class HasteStorageClientMeta:
 			result = self.mongo_collection.insert(document)
 			for author in project.metadata.authors:
 				print (author.name)
-				document.update({'set' : { "authors":  {"name": author.name, "institue": author.institute}}})
-				result = self.mongo_collection.insert(document)
+				document.update({'authors' : { "author":  {"name": author.name, "institue": author.institute}}})
 			return document    
 
 	def __read_config_file():
