@@ -57,7 +57,7 @@ class HasteStorageClientMeta:
 		document = {'timestamp': timestamp,
                         'substream_id': substream_id,
                         'project_name': project.name,
-						'project_description': project.project.description}
+						'project_description': project.description}
 		document.update({}, { "$set": { "author": project.metadata.authors} }, multi=True)
 		document.update({}, { "$set": { "ingredient": project.metadata.ingredients } }, multi=True)
 		result = self.mongo_collection.insert(document)
