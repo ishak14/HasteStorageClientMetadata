@@ -67,7 +67,7 @@ class HasteStorageClientMeta:
 				#document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				
 
-			document.update(author_list)
+			document.update('authors':author_list)
 			result = self.mongo_collection.insert(document)
 
 			return document    
