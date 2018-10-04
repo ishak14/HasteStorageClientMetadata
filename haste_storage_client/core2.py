@@ -16,29 +16,30 @@ class HasteStorageClientMeta:
 				project=None,
                 storage_policy=None,
                 default_storage=OS_SWIFT_STORAGE):
+
         
-        	if config is None:
-            		try:
-                		config = self.__read_config_file()
-            		except:
-                		raise ValueError('If config is None, provide a configuration file.')
+				if config is None:
+							try:
+								config = self.__read_config_file()
+							except:
+								raise ValueError('If config is None, provide a configuration file.')
 
-        	if default_storage is None:
-            		raise ValueError("default_storage_location cannot be None - did you mean 'trash'?")
+				if default_storage is None:
+							raise ValueError("default_storage_location cannot be None - did you mean 'trash'?")
 
-        	self.project_id = project_id
-			self.project = project
-        	self.default_storage = default_storage
+				self.project_id = project_id
+				self.project = project
+				self.default_storage = default_storage
 
-        	self.os_swift_storage = OsSwiftStorage(config[OS_SWIFT_STORAGE])
+				self.os_swift_storage = OsSwiftStorage(config[OS_SWIFT_STORAGE])
 
-        	self.mongo_client = MongoClient(config['haste_metadata_server']['connection_string'])
-        	self.mongo_collection = self.mongo_client.streams['strm_' + self.project_id]
+				self.mongo_client = MongoClient(config['haste_metadata_server']['connection_string'])
+				self.mongo_collection = self.mongo_client.streams['strm_' + self.project_id]
 
-        	# ensure indices (idempotent)
-        	self.mongo_collection.create_index('substream_id')
-        	self.mongo_collection.create_index('timestamp')
-        	self.mongo_collection.create_index('location')
+				# ensure indices (idempotent)
+				self.mongo_collection.create_index('substream_id')
+				self.mongo_collection.create_index('timestamp')
+				self.mongo_collection.create_index('location')
 	@staticmethod
 	def __read_config_file():
 		with open(expanduser('~/.haste/haste_storage_client_config.json')) as fh:
