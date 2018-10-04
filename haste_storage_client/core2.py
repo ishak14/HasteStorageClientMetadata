@@ -60,7 +60,7 @@ class HasteStorageClientMeta:
 				}
 			for author in project.metadata.authors:
 
-				document.update({'$set' : { "authors":  {"name": author[0], "institue": author[1]}}})
+				document.update({'set' : { "authors":  {"name": author.name, "institue": author.institute}}})
 			result = self.mongo_collection.insert(document)
 			return document    
 
