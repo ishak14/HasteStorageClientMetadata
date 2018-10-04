@@ -62,7 +62,7 @@ class HasteStorageClientMeta:
 			
 			author_list = []
 			for author in project.metadata.authors:
-				obj = {'name': author.name, 'institute':author.institue}
+				obj = {'name': author.name, 'institute':author.institute}
 				author_list.append(obj)
 				#document['authors'].append({'type':'author','name':author.name,"institue": author.institute})
 				
