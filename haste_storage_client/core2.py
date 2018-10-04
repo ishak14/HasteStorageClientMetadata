@@ -66,12 +66,23 @@ class HasteStorageClientMeta:
 					'project': {
 							'name': project.name,
 							'description': project.description,
-							'author': {
+							project.metadata.authors[1].name: {
+											'role':{
+												'name': 'author'
+											},
 											'name': project.metadata.authors[1].name,
 											'insitute': {'name': project.metadata.authors[1].institute}
 										}
+							},
+							project.metadata.authors[0].name: {
+											'role':{
+												'name': 'author'
+											},
+											'name': project.metadata.authors[0].name,
+											'insitute': {'name': project.metadata.authors[0].institute}
+										}
 							}
-					}
+					
 				}
 			
 
