@@ -56,7 +56,10 @@ class HasteStorageClientMeta:
 		blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 		document = {'timestamp': timestamp,
                         'substream_id': substream_id,
-                        'project': project }
+                        'project_name': project.name,
+						'project_description': project.project_description,
+						'ingredients': project.metadata.ingredients,
+						'authors': project.metadata.authors}
         
 		result = self.mongo_collection.insert(document)
 		return document    
