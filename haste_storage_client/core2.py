@@ -63,7 +63,7 @@ class HasteStorageClientMeta:
 			for author in project.metadata.authors:
 				print (author.name)
 
-				document.update({'authors' : {'_id':idTest "author":  {"name": author.name, "institue": author.institute}}})
+				document.update({'authors' : {'_id':idTest, "author":  {"name": author.name, "institue": author.institute}}})
 				idTest = idTest + 1
 			return document    
 
