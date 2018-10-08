@@ -24,7 +24,7 @@ haste_storage_client_config = {
 
 # Identifies both the experiment, and the session (ie. unique each time the stream starts),
 # for example, this would be a good format - this needs to be generated at the stream edge.
-initials = 'Tony_Wang'
+initials = 'Andy_Ishak'
 stream_id = datetime.datetime.today().strftime('%Y_%m_%d__%H_%M_%S') + '_exp1_' + initials
 
 print('stream ID is: %s' % stream_id)
@@ -67,7 +67,7 @@ client = HasteStorageClientMeta(
 
 #blob_bytes = b'this is a binary blob eg. image data.'
 timestamp_cloud_edge = time.time()
-substream_id = 'B22'  # Group by microscopy well ID.
+substream_id = '_B22'  # Group by microscopy well ID.
 description = "description test!"
 machineNumber = "SQ7333"
 institute = "Gothenburg University"

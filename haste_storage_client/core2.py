@@ -61,7 +61,11 @@ class HasteStorageClientMeta:
 			#	author_list.append(obj)
 			document = {'timestamp': timestamp,
 				'substream':{
+<<<<<<< HEAD
 					'substream_id': substream_id,
+=======
+					'_id': substream_id,
+>>>>>>> 58dff46e47bb73f67075d0448a20aa6e820fa822
 					'project': {
 							'name': project.name,
 							'description': project.description,
