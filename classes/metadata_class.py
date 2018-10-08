@@ -1,3 +1,8 @@
+from __future__ import print_function
+from pymongo import MongoClient
+from os.path import expanduser
+
+
 class Ingredient():
 	def __init__(self,name,amount,amountType):
 		self.name = name

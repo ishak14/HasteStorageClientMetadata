@@ -59,7 +59,7 @@ metadata = Metadata(ingredients,description,authors)
 project = Project("Cell Mercury Testing","testing what mercury in the cell x will do over time of y month", metadata)
 
 client = HasteStorageClientMeta(
-                            project_id=stream_id,
+                            substream_id=stream_id,
                             config=haste_storage_client_config,
                             project = project,
                             storage_policy=[(0.5, 1.0, OS_SWIFT_STORAGE)],  # map 0.5<=interestingness<=1.0 to OS swift.

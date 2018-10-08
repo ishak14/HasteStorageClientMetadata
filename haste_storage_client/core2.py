@@ -11,7 +11,7 @@ INTERESTINGNESS_DEFAULT = 1.0
 class HasteStorageClientMeta:
     
 	def __init__(self,
-                project_id,
+                substream_id,
                 config=None,
 				project=None,
                 storage_policy=None,
@@ -27,14 +27,14 @@ class HasteStorageClientMeta:
 				if default_storage is None:
 							raise ValueError("default_storage_location cannot be None - did you mean 'trash'?")
 
-				self.project_id = project_id
+				self.substream_id = substream_id
 				self.project = project
 				self.default_storage = default_storage
 
 				self.os_swift_storage = OsSwiftStorage(config[OS_SWIFT_STORAGE])
 
 				self.mongo_client = MongoClient(config['haste_metadata_server']['connection_string'])
-				self.mongo_collection = self.mongo_client.streams['strm_' + self.project_id]
+				self.mongo_collection = self.mongo_client.streams['strm_' + self.substream_id]
 
 				# ensure indices (idempotent)
 				self.mongo_collection.create_index('substream_id')
@@ -59,10 +59,9 @@ class HasteStorageClientMeta:
 			#		}
 			#	obj = {'author'name': author.name, 'institute':author.institute}
 			#	author_list.append(obj)
-			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 			document = {'timestamp': timestamp,
 				'substream':{
-					'id': substream_id,
+					'substream_id': substream_id,
 					'project': {
 							'name': project.name,
 							'description': project.description,
