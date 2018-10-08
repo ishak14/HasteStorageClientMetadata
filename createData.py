@@ -1,3 +1,4 @@
+
 import time
 import datetime
 from haste_storage_client.core import HasteStorageClient, OS_SWIFT_STORAGE, TRASH
@@ -13,7 +14,7 @@ haste_storage_client_config = {
         # See: https://docs.openstack.org/keystoneauth/latest/
         #   api/keystoneauth1.identity.v3.html#module-keystoneauth1.identity.v3.password
         'username': 's9498',
-        'password': '***',
+        'password': 'Fikt6UppbD',
         'project_name': 'SNIC 2018/10-31',
         'user_domain_name': 'snic',
         'auth_url': 'https://hpc2n.cloud.snic.se:5000/v3',

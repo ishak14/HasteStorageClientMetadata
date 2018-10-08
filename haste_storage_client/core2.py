@@ -62,7 +62,7 @@ class HasteStorageClientMeta:
 			blob_id = 'strm_' + self.project_id + '_ts_' + str(timestamp)
 			document = {'timestamp': timestamp,
 				'substream':{
-					'id': substream_id,
+					'_id': substream_id,
 					'project': {
 							'name': project.name,
 							'description': project.description,
